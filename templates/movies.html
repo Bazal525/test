@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center mb-4">Lista Filmów</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Opis filmu</th>
+            <th>Godzina seansu</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+        <tr>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.description }}</td>
+            <td>{{ movie.time }}</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="/edit_movie/{{ movie.id }}">Edytuj</a>
+                <a class="btn btn-danger btn-sm" href="/delete_movie/{{ movie.id }}">Usuń</a>
+                <a class="btn btn-success btn-sm" href="/booking/{{ movie.id }}">Zarezerwuj</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="mt-4">
+    <a class="btn btn-success" href="/add_movie">Dodaj Nowy Film</a>
+</div>
+{% endblock %}

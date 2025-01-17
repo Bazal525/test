@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center mb-4">Lista Rezerwacji</h1>
+<ul class="list-group w-75 mx-auto">
+    {% for booking in bookings %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>{{ booking.name }} zarezerwował/a {{ booking.tickets }} biletów na film ID: {{ booking.movie_id }}</span>
+        <a href="/delete_booking/{{ booking.id }}" class="btn btn-danger btn-sm" onclick="return confirm('Czy na pewno chcesz usunąć?')">Usuń</a>
+    </li>
+    {% endfor %}
+</ul>
+<div class="text-center mt-4">
+    <a href="/" class="btn btn-secondary">Powrót</a>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-center mb-4">Rezerwacja dla filmu: <strong>{{ movie.title }}</strong></h1>
+
+<div class="card w-50 mx-auto shadow-sm">
+    <div class="card-body">
+        <h5 class="card-title">Szczegóły filmu</h5>
+        <p><strong>Opis:</strong> {{ movie.description }}</p>
+        <p><strong>Czas:</strong> {{ movie.time }}</p>
+    </div>
+</div>
+
+<hr class="my-4">
+
+<form method="post" class="w-50 mx-auto">
+    <div class="mb-3">
+        <label for="name" class="form-label">Imię i nazwisko</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Wpisz swoje imię i nazwisko" required>
+    </div>
+    <div class="mb-3">
+        <label for="tickets" class="form-label">Liczba biletów</label>
+        <input type="number" class="form-control" id="tickets" name="tickets" min="1" placeholder="Podaj liczbę biletów" required>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Zarezerwuj</button>
+</form>
+
+<div class="mt-4 text-center">
+    <a href="/movies" class="btn btn-secondary">Powrót do listy filmów</a>
+</div>
+{% endblock %}
+z

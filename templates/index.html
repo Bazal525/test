@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="mb-4">Witamy w Kinie!</h1>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+        <a href="/movies" class="btn btn-primary btn-lg shadow-lg p-4" style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <i class="bi bi-film" style="font-size: 2rem;"></i>
+            <span>Filmy</span>
+        </a>
+        <a href="/add_movie" class="btn btn-success btn-lg shadow-lg p-4" style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <i class="bi bi-plus-circle" style="font-size: 2rem;"></i>
+            <span>Dodaj Film</span>
+        </a>
+        <a href="/bookings" class="btn btn-warning btn-lg shadow-lg p-4" style="width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <i class="bi bi-calendar-check" style="font-size: 2rem;"></i>
+            <span>Rezerwacje</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
